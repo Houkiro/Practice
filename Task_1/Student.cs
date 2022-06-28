@@ -23,5 +23,15 @@ namespace Task_1
             int [] zero = { 0 };
             Marks = zero;
         }
+        public void SetMark(List<Mark> mks)
+        {
+            List<int> value = new();
+            for (int i = 0; i < mks.Count; i++)
+            {
+                if (ID == mks[i].StudentID)
+                    value.Add(mks[i].Value);
+            }
+            Marks = value.ToArray();
+        }
     }
 }

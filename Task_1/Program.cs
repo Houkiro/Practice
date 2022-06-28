@@ -9,17 +9,8 @@ List<Mark> marks = new()
     new(2, 1, "sql", 10)
 };
 
-void SetMark(Student st, List<Mark> mks)
-{
-    List<int> value = new();
-    for (int i = 0; i < mks.Count; i++)
-    {
-        if (st.ID == mks[i].StudentID)
-            value.Add(mks[i].Value);
-    }
-    st.Marks = value.ToArray();
-}
-SetMark(st1, marks);
+
+st1.SetMark(marks);
 foreach (var item in st1.Marks)
 {
     Console.WriteLine(item);
